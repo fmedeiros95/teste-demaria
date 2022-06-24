@@ -90,7 +90,10 @@ class SalesController extends Controller
 			if ($product->quantity < $quantity) {
 				return response()->json([
 					'success' => false,
-					'message' => __(':Product não tem estoque suficiente.', ['product' => $product->name])
+					'message' => __('<b>:Product</b> não tem estoque suficiente.<br /><b>Estoque:</b> :available', [
+						'product' => $product->name,
+						'available' => $product->quantity
+					])
 				], 400);
 			}
 
@@ -236,7 +239,10 @@ class SalesController extends Controller
 			if ($diff && $product->quantity < $diff) {
 				return response()->json([
 					'success' => false,
-					'message' => __(':Product não tem estoque suficiente.', ['product' => $product->name])
+					'message' => __('<b>:Product</b> não tem estoque suficiente.<br /><b>Estoque:</b> :available', [
+						'product' => $product->name,
+						'available' => $product->quantity
+					])
 				], 400);
 			}
 
