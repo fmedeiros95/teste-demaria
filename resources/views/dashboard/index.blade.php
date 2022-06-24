@@ -177,6 +177,9 @@
 						{ data: 'created_at', name: 'created_at' },
 						{ data: 'message', name: 'message' }
 					],
+					order: [
+						[ 0, "desc" ]
+					],
 					drawCallback: function() {
 						$(".dataTables_paginate > .pagination").addClass("pagination-rounded")
 					}
