@@ -49,15 +49,15 @@
 										<tr>
 											<th>{{ __('Produto') }}</th>
 											<th class="col-2">{{ __('Quantidade') }}</th>
-											<th class="col-2">{{ __('Preço') }}</th>
-											<th class="col-2">{{ __('Subtotal') }}</th>
+											<th class="col-2 text-end">{{ __('Preço Unitário') }}</th>
+											<th class="col-2 text-end">{{ __('Subtotal') }}</th>
 											<th style="width: 25px;"></th>
 										</tr>
 									</thead>
 									<tbody></tbody>
 									<tfoot class="table-light">
 										<tr>
-											<th>Total</th>
+											<th>{{ __('Total') }}</th>
 											<th></th>
 											<th></th>
 											<th class="text-end"><span id="gtotal">-</span></th>

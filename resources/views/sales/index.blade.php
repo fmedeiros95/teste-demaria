@@ -119,7 +119,7 @@
 							<span>${product.name}</span>
 						</td>
 						<td>
-							<input class="form-control product-quantity text-center" name="quantity[${product.id}]" data-id="${product.id}" type="number" value="${product.quantity}" min="1" maxs="${product.inventory}" />
+							<input class="form-control product-quantity text-center" name="quantity[${product.id}]" data-id="${product.id}" type="number" value="${product.quantity}" min="1" />
 						</td>
 						<td class="text-end">${displayMoney(product.price)}</td>
 						<td class="text-end">${displayMoney(product.price * product.quantity)}</td>
