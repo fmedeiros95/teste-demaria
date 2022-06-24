@@ -52,10 +52,7 @@
                     method: 'POST',
                     data: $(this).serialize(),
 					success: function({ message, redirect }) {
-						Swal.fire("{{ __('Sucesso') }}", message, "success");
-						setTimeout(function() {
-							window.location.href = redirect;
-						}, 1250);
+						window.location.href = redirect;
 					},
 					error: function({ responseJSON }) {
 						const { message } = responseJSON;
