@@ -1,7 +1,7 @@
 @extends('partials.master')
 @section('content')
 	<div class="row">
-		<div class="col-md-6 col-xl-3">
+		<div class="col-md-12 col-xl-4">
 			<div class="widget-rounded-circle card">
 				<div class="card-body">
 					<div class="row">
@@ -12,8 +12,46 @@
 						</div>
 						<div class="col-6">
 							<div class="text-end">
-								<h3 class="text-dark mt-1">R$ {{ number_format($totalSalesAmount, 2, ',', '.') }}</h3>
-								<p class="text-muted mb-1 text-truncate">{{ __('Receita') }}</p>
+								<h3 class="text-dark mt-1">R$ {{ number_format($todaySales, 2, ',', '.') }}</h3>
+								<p class="text-muted mb-1 text-truncate">{{ __('Vendas Hoje') }}</p>
+							</div>
+						</div>
+					</div> <!-- end row-->
+				</div>
+			</div> <!-- end widget-rounded-circle-->
+		</div> <!-- end col-->
+		<div class="col-md-12 col-xl-4">
+			<div class="widget-rounded-circle card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-6">
+							<div class="avatar-lg rounded bg-soft-success">
+								<i class="dripicons-wallet font-24 avatar-title text-success"></i>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="text-end">
+								<h3 class="text-dark mt-1">R$ {{ number_format($totalSalesAmountPaid, 2, ',', '.') }}</h3>
+								<p class="text-muted mb-1 text-truncate">{{ __('Vendas') }}</p>
+							</div>
+						</div>
+					</div> <!-- end row-->
+				</div>
+			</div> <!-- end widget-rounded-circle-->
+		</div> <!-- end col-->
+		<div class="col-md-12 col-xl-4">
+			<div class="widget-rounded-circle card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-6">
+							<div class="avatar-lg rounded bg-soft-warning">
+								<i class="dripicons-wallet font-24 avatar-title text-warning"></i>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="text-end">
+								<h3 class="text-dark mt-1">R$ {{ number_format($totalSalesAmountPending, 2, ',', '.') }}</h3>
+								<p class="text-muted mb-1 text-truncate">{{ __('Vendas Pendentes') }}</p>
 							</div>
 						</div>
 					</div> <!-- end row-->
@@ -21,7 +59,7 @@
 			</div> <!-- end widget-rounded-circle-->
 		</div> <!-- end col-->
 
-		<div class="col-md-6 col-xl-3">
+		<div class="col-md-12 col-xl-4">
 			<div class="widget-rounded-circle card">
 				<div class="card-body">
 					<div class="row">
@@ -33,7 +71,7 @@
 						<div class="col-6">
 							<div class="text-end">
 								<h3 class="text-dark mt-1">{{ $totalSales }}</h3>
-								<p class="text-muted mb-1 text-truncate">{{ __('Vendas') }}</p>
+								<p class="text-muted mb-1 text-truncate">{{ __('Vendas Realizadas') }}</p>
 							</div>
 						</div>
 					</div> <!-- end row-->
@@ -41,7 +79,7 @@
 			</div> <!-- end widget-rounded-circle-->
 		</div> <!-- end col-->
 
-		<div class="col-md-6 col-xl-3">
+		<div class="col-md-12 col-xl-4">
 			<div class="widget-rounded-circle card">
 				<div class="card-body">
 					<div class="row">
@@ -53,7 +91,7 @@
 						<div class="col-6">
 							<div class="text-end">
 								<h3 class="text-dark mt-1">{{ $totalCustomers }}</h3>
-								<p class="text-muted mb-1 text-truncate">{{ __('Clientes') }}</p>
+								<p class="text-muted mb-1 text-truncate">{{ __('Clientes Cadastrados') }}</p>
 							</div>
 						</div>
 					</div> <!-- end row-->
@@ -61,7 +99,7 @@
 			</div> <!-- end widget-rounded-circle-->
 		</div> <!-- end col-->
 
-		<div class="col-md-6 col-xl-3">
+		<div class="col-md-12 col-xl-4">
 			<div class="widget-rounded-circle card">
 				<div class="card-body">
 					<div class="row">
@@ -73,7 +111,7 @@
 						<div class="col-6">
 							<div class="text-end">
 								<h3 class="text-dark mt-1">{{ $totalProducts }}</h3>
-								<p class="text-muted mb-1 text-truncate">{{ __('Produtos') }}</p>
+								<p class="text-muted mb-1 text-truncate">{{ __('Produtos Cadastrados') }}</p>
 							</div>
 						</div>
 					</div> <!-- end row-->

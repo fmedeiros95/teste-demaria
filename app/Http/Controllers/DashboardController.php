@@ -24,13 +24,18 @@ class DashboardController extends Controller
 		$totalSales = Sale::count();
 		// Get total products
 		$totalProducts = Product::count();
+
+		// Get today sales
+		$todaySales = Sale::whereDate('created_at', today())->where('status', 'paid')->sum('total');
+
 		// Get total sales amount
-		$totalSalesAmount = Sale::sum('total');
+		$totalSalesAmountPaid = Sale::where('status', 'paid')->sum('total');
+		$totalSalesAmountPending = Sale::where('status', 'pending')->sum('total');
 
 		// Set page title
 		$title = __('Dashboard');
 
-        return view('dashboard.index', compact('title', 'totalCustomers', 'totalSales', 'totalProducts', 'totalSalesAmount'));
+        return view('dashboard.index', compact('title', 'totalCustomers', 'totalSales', 'totalProducts', 'todaySales', 'totalSalesAmountPaid', 'totalSalesAmountPending'));
     }
 
 	public function logs(Request $request)
