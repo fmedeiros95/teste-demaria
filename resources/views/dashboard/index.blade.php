@@ -88,6 +88,14 @@
 			<div class="col-12">
 				<div class="card">
 					<div class="card-body">
+						<div class="header-title d-flex w-100 justify-content-between">
+							<div>
+								<h4>{{ __('Log de Ações') }}</h4>
+								<p class="text-muted font-13 mb-4">
+									{{ __('Aqui você pode ver todos as ações realizadas no sistema.') }}
+								</p>
+							</div>
+						</div>
 						<table class="data-table dt-responsive table table-borderles nowrap table-centered m-0 w-100">
 							<thead>
 								<tr class="table-light">
