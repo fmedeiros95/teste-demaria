@@ -175,11 +175,18 @@ class CustomersController extends Controller
 			], 404);
 		}
 
-		// Add log
-		add_log('User [' . auth()->user()->id . '] ' . auth()->user()->name . ' deleted customer [' . $customer->id . '] ' . $customer->name);
+		try {
+			// Add log
+			add_log('User [' . auth()->user()->id . '] ' . auth()->user()->name . ' deleted customer [' . $customer->id . '] ' . $customer->name);
 
-		// Remove customer
-		$customer->delete();
+			// Remove customer
+			$customer->delete();
+		} catch (\Exception $e) {
+			return response()->json([
+				'success' => false,
+				'message' => __('Não foi possível remover o cliente!')
+			], 400);
+		}
 
 		return response()->json([
 			'success' => true,

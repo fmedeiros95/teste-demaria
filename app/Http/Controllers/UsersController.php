@@ -210,11 +210,18 @@ class UsersController extends Controller
 			], 404);
 		}
 
-		// Add log
-		add_log('User [' . auth()->user()->id . '] ' . auth()->user()->name . ' deleted user [' . $user->id . '] ' . $user->name);
+		try {
+			// Add log
+			add_log('User [' . auth()->user()->id . '] ' . auth()->user()->name . ' deleted user [' . $user->id . '] ' . $user->name);
 
-		// Remove user
-		$user->delete();
+			// Remove user
+			$user->delete();
+		} catch (\Exception $e) {
+			return response()->json([
+				'success' => false,
+				'message' => __('Não foi possível excluir o usuário!')
+			], 400);
+		}
 
 		return response()->json([
 			'success' => true,
